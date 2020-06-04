@@ -1,0 +1,16 @@
+[
+  {
+    "id": 0,
+    "title": "Hello World",
+    "description": "",
+    "input": "world\n",
+    "expected_output": "hello world\n"
+  },
+  {
+    "id": 1,
+    "title": "Hello World",
+    "description": "",
+    "input": "world\n",
+    "expected_output": "hellooo world\n"
+  }
+]

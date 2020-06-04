@@ -7,8 +7,9 @@ import {
     Link,
     useParams
 } from 'react-router-dom';
-// import './index.css';
-import App from './example';
+// import './assets/css/style.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import App from './router';
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
