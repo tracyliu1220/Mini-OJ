@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import FetchProblem from './problem';
+import FetchNavBar from './nav';
 
 // Params are placeholders in the URL that begin
 // with a colon, like the `:id` param defined in
@@ -36,6 +37,7 @@ export default function MyRouter() {
 function Home() {
   return (
     <Router>
+      <FetchNavBar home={true}/>
       <div>
         <h2>Accounts</h2>
         <ul>

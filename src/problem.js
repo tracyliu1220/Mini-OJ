@@ -2,12 +2,16 @@ import React from "react";
 import {
   useParams
 } from "react-router-dom";
-import problem from './assets/data/problem.json'
+import FetchNavBar from './nav';
+import problem from './assets/data/problem.json';
 
 export default function FetchProblem() {
   let { id } = useParams();
   return (
-    <Problem id={id} />
+    <div className="h-100 w-100 page">
+      <FetchNavBar home={false}/>
+      <Problem id={id} />
+    </div>
   );
 }
 
@@ -76,10 +80,24 @@ class Problem extends React.Component {
 
   render() {
     return (
+        <div className="h-100">
+          <div className="container w-100 h-100">
+          <div className="row h-100">
+            <div className="col-sm">
+              One of three columns
+            </div>
+            <div className="col-sm">
+              <textarea className="w-100"/>
 
-        <button className="btn btn-info" onClick={this.submit}>
-          submit
-        </button>
+              {/*}<div className="w-100 h-25 submitarea">*/}
+                <button className="submit w-100 btn btn-info" onClick={this.submit}>
+                  submit
+                </button>
+              {/*}</div>*/}
+            </div>
+          </div>
+          </div>
+        </div>
     );
   }
 }
