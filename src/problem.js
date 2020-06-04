@@ -2,14 +2,6 @@ import React from "react";
 import {
   useParams
 } from "react-router-dom";
-import {
-  Navbar,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
-} from 'reactstrap';
-import status from './assets/data/status.json'
 import problem from './assets/data/problem.json'
 
 export default function FetchProblem() {
@@ -85,7 +77,7 @@ class Problem extends React.Component {
   render() {
     return (
 
-        <button class="btn btn-info" onClick={this.submit}>
+        <button className="btn btn-info" onClick={this.submit}>
           submit
         </button>
     );

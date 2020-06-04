@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   useParams
 } from "react-router-dom";
 
@@ -26,20 +25,11 @@ export default function MyRouter() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/hello">
-            <Hello />
-          </Route>
           <Route path="/:id">
             <Child />
           </Route>
         </Switch>
     </Router>
-  );
-}
-
-function Hello() {
-  return (
-    <h1>Hello</h1>
   );
 }
 
