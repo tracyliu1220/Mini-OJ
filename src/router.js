@@ -9,6 +9,8 @@ import {
 import FetchProblem from './problem';
 import FetchNavBar from './nav';
 
+import problem from './assets/data/problem.json';
+
 // Params are placeholders in the URL that begin
 // with a colon, like the `:id` param defined in
 // the route in this example. A similar convention
@@ -34,36 +36,32 @@ export default function MyRouter() {
   );
 }
 
-function Home() {
-  return (
-    <Router>
-      <FetchNavBar home={true}/>
-      <div>
-        <h2>Accounts</h2>
-        <ul>
-          <li>
-            {/*<Link to="/netflix">Netflix</Link>*/}
-            <a href="/netflix">Netflix</a>
-          </li>
-          <li>
-            <a href="/zillow-group">Zillow Group</a>
-            {/*<Link to="/zillow-group">Zillow Group</Link>*/}
-          </li>
-          <li>
-            <a href="/yahoo">Yahoo</a>
-            {/*<Link to="/yahoo">Yahoo</Link>*/}
-          </li>
-          <li>
-            {/*<Link to="/modus-create">Modus Create</Link>*/}
-            <a href="/modus-create">Modus Create</a>
-          </li>
-          <li>
-            <a href="/hello">Hello</a>
-          </li>
-        </ul>
-      </div>
-    </Router>
-  );
+class Home extends React.Component {
+  constructor() {
+    super();
+    this.goto = this.goto.bind(this);
+    this.problems = []
+    for (var i = 0; i < problem.length; i++) {
+      this.problems.push(
+          <a href={"/problem/" + i} className="plistitem btn btn-light w-100">{problem[i].title}</a>
+      )
+    }
+  }
+  goto(idx) {
+    window.location.href = "/problem/" + idx;
+  }
+  render() {
+    return (
+      <Router>
+        <FetchNavBar home={true}/>
+        <div className="mainfont">
+          <div className="container w-65 plist">
+            {this.problems}
+          </div>
+        </div>
+      </Router>
+    );
+  }
 }
 
 function Child() {

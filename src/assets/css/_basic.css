@@ -1,7 +1,12 @@
 * {
-	font-family: 'Work Sans';
+	/*font-family: 'Work Sans';*/
 	/* font-size: 18; */
 	/* color: #606060; */
+	/* font-family: 'Source Code Pro', monospace;*/
+}
+
+.code {
+	font-family: 'Source Code Pro', monospace;
 }
 
 .submitarea {
@@ -19,6 +24,11 @@
 }
 */
 nav {
+	font-family: 'Work Sans';
+}
+
+.mainfont {
+	font-family: 'Work Sans';
 }
 
 .page {
@@ -33,6 +43,27 @@ textarea {
 	padding: 20px;
 }
 
-
 .submit {
+}
+
+.ReactCodeMirror {
+	height: 100%;
+	padding-bottom: 20px;
+}
+
+a {
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+.plist {
+	padding-top: 20px;
+}
+
+.plistitem {
+	margin: 5px;
 }

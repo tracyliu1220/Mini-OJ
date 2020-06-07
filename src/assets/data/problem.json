@@ -3,14 +3,14 @@
     "id": 0,
     "title": "Hello World",
     "description": "",
-    "input": "world\n",
-    "expected_output": "hello world\n"
+    "input": "tracy\n",
+    "expected_output": "hello tracy\n"
   },
   {
     "id": 1,
-    "title": "Hello World",
+    "title": "Sorting Numbers",
     "description": "",
-    "input": "world\n",
-    "expected_output": "hellooo world\n"
+    "input": "9\n1 3 4 6 5 7 8 9 2\n",
+    "expected_output": "1 2 3 4 5 6 7 8 9\n"
   }
 ]

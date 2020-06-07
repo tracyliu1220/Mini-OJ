@@ -3,7 +3,13 @@ import {
   useParams
 } from "react-router-dom";
 import FetchNavBar from './nav';
+// import FetchCode from './code';
 import problem from './assets/data/problem.json';
+import CodeMirror from 'react-codemirror';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/base16-light.css';
+import './assets/css/style.css';
+
 
 export default function FetchProblem() {
   let { id } = useParams();
@@ -21,6 +27,7 @@ class Problem extends React.Component {
     this.id = parseInt(props.id);
     // console.log(this.id);
     this.submit = this.submit.bind(this);
+    this.code = React.createRef();
   }
   submit() {
     var id = this.id;
@@ -39,14 +46,15 @@ class Problem extends React.Component {
 
     req.type("json");
     req.send({
-      "language_id": 50,
-      "source_code": "#include <stdio.h>\n\nint main(void) {\n  char name[10];\n  scanf(\"%s\", name);\n  printf(\"hello %s\\n\", name);\n  return 0;\n}",
+      "language_id": 54,
+      "source_code": this.code.current.state.code,
       "stdin": problem[id].input,
-      "expected_output": problem[id].expected_output
+      "expected_output": problem[id].expected_output,
+      "cpu_time_limit": 1
     });
 
     req.end(function (res) {
-      if (res.error) throw new Error(res.error);
+      // if (res.error) throw new Error(res.error);
 
       console.log(res.body);
 
@@ -62,12 +70,15 @@ class Problem extends React.Component {
         });
 
         req.end(function (res) {
-          if (res.error) throw new Error(res.error);
-
-          console.log(res.body);
-          alert(res.body.status.description);
+          // if (res.error) throw new Error(res.error);
+          if (res.error) {
+            alert("Compile Error");
+          } else {
+            console.log(res.body);
+            alert(res.body.status.description);
+          }
         });
-      }, 1500);
+      }, 3000);
 
     });
 
@@ -83,11 +94,16 @@ class Problem extends React.Component {
         <div className="h-100">
           <div className="container w-100 h-100">
           <div className="row h-100">
-            <div className="col-sm">
-              One of three columns
+            <div className="col-sm mainfont">
+              Problem Statement
             </div>
             <div className="col-sm">
-              <textarea className="w-100"/>
+              {/*}<textarea className="w-100"/>*/}
+              <div style={{height: "85%"}}>
+                <Code ref={this.code}/>
+              </div>
+
+
 
               {/*}<div className="w-100 h-25 submitarea">*/}
                 <button className="submit w-100 btn btn-info" onClick={this.submit}>
@@ -98,6 +114,39 @@ class Problem extends React.Component {
           </div>
           </div>
         </div>
+    );
+  }
+}
+
+
+require('codemirror/mode/clike/clike');
+// mode: 'clike',
+// readOnly: false
+
+class Code extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: 'CodeMirror',
+      code: '// Code\n'
+    };
+  }
+
+  updateCode(newCode) {
+		this.setState({
+			code: newCode,
+		});
+	}
+
+  render() {
+    let options = {
+			lineNumbers: true,
+      theme: 'base16-light'
+		};
+    return (
+      <div className="w-100 h-100">
+        <CodeMirror style={{height: "800px"}} value={this.state.code} onChange={this.updateCode.bind(this)} options={options} />
+      </div>
     );
   }
 }
