@@ -1,17 +1,30 @@
 import React from "react";
+import problem from "./assets/data/problem.json"
 
 export default function FetchNavBar(props) {
   return (
-    <NavBar home={props.home}/>
+    <NavBar home={props.home} id={props.id}/>
   );
+}
+
+
+function randint(start, end) {
+  return Math.floor(Math.random() * (end - start)) + start;
 }
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.gotoRandom = this.gotoRandom.bind(this);
     this.home = props.home;
+    this.id = parseInt(props.id);
+    this.n = problem.length;
+    this.pre = (this.id - 1 + this.n) % this.n;
+    this.next = (this.id + 1) % this.n;
   }
-
+  gotoRandom() {
+    window.location.href = "/problem/" + randint(0, this.n);
+  }
   render() {
     const currentHome = this.home;
     return (
@@ -32,13 +45,13 @@ class NavBar extends React.Component {
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 {currentHome ?
-                  <a className="dropdown-item" href="#">Random</a>
+                  <a className="dropdown-item" href="#" onClick={this.gotoRandom}>Random</a>
                 :
                   <div>
-                    <a className="dropdown-item" href="#">Previous</a>
-                    <a className="dropdown-item" href="#">Next</a>
+                    <a className="dropdown-item" href={"/problem/" + this.pre}>Previous</a>
+                    <a className="dropdown-item" href={"/problem/" + this.next}>Next</a>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">Random</a>
+                    <a className="dropdown-item" href="#" onClick={this.gotoRandom}>Random</a>
                   </div>
                 }
               </div>

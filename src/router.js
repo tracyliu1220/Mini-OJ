@@ -28,9 +28,9 @@ export default function MyRouter() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/:id">
+          {/*<Route path="/:id">
             <Child />
-          </Route>
+          </Route>*/}
         </Switch>
     </Router>
   );
@@ -39,21 +39,21 @@ export default function MyRouter() {
 class Home extends React.Component {
   constructor() {
     super();
-    this.goto = this.goto.bind(this);
+    // this.goto = this.goto.bind(this);
     this.problems = []
     for (var i = 0; i < problem.length; i++) {
       this.problems.push(
-          <a href={"/problem/" + i} className="plistitem btn btn-light w-100">{problem[i].title}</a>
+          <a key={"list"+i} href={"/problem/" + i} className="plistitem btn btn-light w-100">{problem[i].title}</a>
       )
     }
   }
-  goto(idx) {
-    window.location.href = "/problem/" + idx;
-  }
+  // goto(idx) {
+  //   window.location.href = "/problem/" + idx;
+  // }
   render() {
     return (
       <Router>
-        <FetchNavBar home={true}/>
+        <FetchNavBar home={true} id={-1}/>
         <div className="mainfont">
           <div className="container w-65 plist">
             {this.problems}

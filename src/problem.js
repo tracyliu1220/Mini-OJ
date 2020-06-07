@@ -10,12 +10,11 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/base16-light.css';
 import './assets/css/style.css';
 
-
 export default function FetchProblem() {
   let { id } = useParams();
   return (
     <div className="h-100 w-100 page">
-      <FetchNavBar home={false}/>
+      <FetchNavBar home={false} id={id}/>
       <Problem id={id} />
     </div>
   );
