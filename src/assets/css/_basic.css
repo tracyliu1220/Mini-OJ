@@ -16,6 +16,7 @@
 
 .container {
 	height: 100%;
+	position: relative;
 }
 
 /*
@@ -25,6 +26,7 @@
 */
 nav {
 	font-family: 'Work Sans';
+	position: relative;
 }
 
 .mainfont {
@@ -36,7 +38,7 @@ nav {
 }
 
 textarea {
-	height: 85%;
+	height: 80%;
 }
 
 .col-sm {
@@ -49,6 +51,8 @@ textarea {
 .ReactCodeMirror {
 	height: 100%;
 	padding-bottom: 20px;
+	min-height: 300px;
+	max-height: 800px;
 }
 
 a {
@@ -67,3 +71,81 @@ a:hover {
 .plistitem {
 	margin: 5px;
 }
+
+.statement {
+	padding-top: 50px;
+}
+
+.output {
+	margin-bottom: 50px;
+}
+
+h4 {
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.codearea {
+	background-color: #F8F9FA;
+	font-family: monospace;
+	padding: 15px;
+}
+
+p {
+	margin: 0px;
+}
+
+.side {
+	overflow: scroll;
+}
+
+h6 {
+	color: grey;
+}
+
+.language {
+	padding-bottom: 20px;
+}
+
+.welcome {
+	height: 100%;
+}
+
+.welcome-block {
+  top: 50%;
+  left: 50%;
+	width: 600px;
+	position: relative;
+	margin-left: -300px;
+	margin-top: -135px;
+	text-align: center;
+}
+
+.welcome-title {
+	font-size: 100px;
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 0px;
+}
+
+.welcome-full-title {
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+
+.welcome-btns {
+	text-align: center;
+}
+
+.welcome-btn {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.col-sm {
+	display: inline-block;
+}
+
+.cm-s-base16-light.CodeMirror { background: #FFFFFF; color: #202020; }
+.cm-s-base16-light .CodeMirror-gutters { background: #F8F9FA; border-right: 0px; }

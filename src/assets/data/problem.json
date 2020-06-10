@@ -2,36 +2,49 @@
   {
     "id": 0,
     "title": "Hello World",
-    "description": "",
+    "description": "Alan wants to say hello to everyone. Given a name, please print out what Alan will say.",
+    "input_format": "A string.\n1 <= the length of the string <= 100.",
+    "output_format": "Please print out \"hello\" and the given name.",
+    "sample_input": "world\n",
+    "sample_output": "hello world\n",
     "input": "tracy\n",
-    "expected_output": "hello tracy\n"
+    "expected_output": "hello tracy\n",
+    "time_limit": 1
   },
   {
     "id": 1,
     "title": "Sorting Numbers",
-    "description": "",
+    "description": "Given n and n positive numbers, please sort the numbers in increasing order.",
+    "input_format": "The first line will contain a number n. 1 <= n <= 50.\nThe second line will contain n numbers ai where 1 <= i <= n and 1 <= ai <= 2000.",
+    "output_format": "Please print out the sorted ai.",
+    "sample_input": "4\n1 3 4 2\n",
+    "sample_output": "1 2 3 4\n",
     "input": "9\n1 3 4 6 5 7 8 9 2\n",
-    "expected_output": "1 2 3 4 5 6 7 8 9\n"
+    "expected_output": "1 2 3 4 5 6 7 8 9\n",
+    "time_limit": 0.5
   },
   {
     "id": 2,
-    "title": "Problem 3",
-    "description": "",
-    "input": "9\n1 3 4 6 5 7 8 9 2\n",
-    "expected_output": "1 2 3 4 5 6 7 8 9\n"
+    "title": "Exponentiating",
+    "description": "Given a and n, please print out a^n mod 1000000007.",
+    "input_format": "There are 2 numbers in the input, a and n respectively.\n1 <= a <= 20.\n1 <= n <= 1000000000.",
+    "output_format": "Please print a number a^n mod 1000000007.",
+    "sample_input": "3 4\n",
+    "sample_output": "81\n",
+    "input": "2 1000000000\n",
+    "expected_output": "140625001\n",
+    "time_limit": 1
   },
   {
     "id": 3,
-    "title": "Problem 4",
-    "description": "",
-    "input": "9\n1 3 4 6 5 7 8 9 2\n",
-    "expected_output": "1 2 3 4 5 6 7 8 9\n"
-  },
-  {
-    "id": 4,
-    "title": "Problem 5",
-    "description": "",
-    "input": "9\n1 3 4 6 5 7 8 9 2\n",
-    "expected_output": "1 2 3 4 5 6 7 8 9\n"
+    "title": "Divide the Candies",
+    "description": "Alan's dad wants to divide the candies to Alan and Alan's sister as fairly as possible.\nGiven the weights of the candies, please divide them to 2 groups, where the sum of the weights in group1 and group2 are w1 and w2 respectively.\nPlease print out the minimum difference between w1 and w2.",
+    "input_format": "The first line contains an integer n, which is the number of candies.\nThe second line contains n positive integers ai.\n ai indicates the weight of the i th candy where 1 <= i <= n.\n1 <= n <= 40.\n1 <= ai <= 1000.",
+    "output_format": "The minimum possible difference between w1 and w2, where w1 is the sum of weights in group1 and w2 is the sum of weights in group2.",
+    "sample_input": "5\n4 7 3 4 5\n",
+    "sample_output": "1\n",
+    "input": "40\n384 887 778 916 794 336 387 493 650 422 363 28 691 60 764 927 541 427 173 737 212 369 568 430 783 531 863 124 68 136 930 803 23 59 70 168 394 457 12 43\n",
+    "expected_output": "1\n",
+    "time_limit": 1
   }
 ]

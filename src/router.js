@@ -8,6 +8,7 @@ import {
 
 import FetchProblem from './problem';
 import FetchNavBar from './nav';
+import FetchWelcome from './welcome';
 
 import problem from './assets/data/problem.json';
 
@@ -21,16 +22,15 @@ export default function MyRouter() {
   return (
     <Router>
         <Switch>
-          {/*<Route path="/home" children={<Home />} />*/}
           <Route path="/problem/:id">
             <FetchProblem />
           </Route>
           <Route path="/home">
             <Home />
           </Route>
-          {/*<Route path="/:id">
-            <Child />
-          </Route>*/}
+          <Route path="/">
+            <FetchWelcome />
+          </Route>
         </Switch>
     </Router>
   );
@@ -62,16 +62,4 @@ class Home extends React.Component {
       </Router>
     );
   }
-}
-
-function Child() {
-  // We can use the `useParams` hook here to access
-  // the dynamic pieces of the URL.
-  let { id } = useParams();
-
-  return (
-    <div>
-      <h3>ID: {id}</h3>
-    </div>
-  );
 }
