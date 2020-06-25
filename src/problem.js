@@ -173,17 +173,17 @@ class Code extends React.Component {
   }
 
   updateCode(newCode) {
-		this.setState({
-			code: newCode,
+    this.setState({
+      code: newCode,
       mode: this.mode
-		});
-	}
+    });
+  }
 
   render() {
     let options = {
-			lineNumbers: true,
+      lineNumbers: true,
       theme: 'base16-light'
-		};
+    };
     return (
       <div className="w-100 h-100">
         <CodeMirror style={{height: "800px"}} value={this.state.code} onChange={this.updateCode.bind(this)} options={options} />

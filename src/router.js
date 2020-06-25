@@ -21,17 +21,17 @@ import problem from './assets/data/problem.json';
 export default function MyRouter() {
   return (
     <Router>
-        <Switch>
-          <Route path="/problem/:id">
-            <FetchProblem />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/">
-            <FetchWelcome />
-          </Route>
-        </Switch>
+      <Switch>
+        <Route path="/problem/:id">
+          <FetchProblem />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/">
+          <FetchWelcome />
+        </Route>
+      </Switch>
     </Router>
   );
 }
