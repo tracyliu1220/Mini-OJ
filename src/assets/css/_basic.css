@@ -147,5 +147,9 @@ h6 {
 	display: inline-block;
 }
 
+.CodeMirror {
+	height: 100%;
+}
+
 .cm-s-base16-light.CodeMirror { background: #FFFFFF; color: #202020; }
 .cm-s-base16-light .CodeMirror-gutters { background: #F8F9FA; border-right: 0px; }
